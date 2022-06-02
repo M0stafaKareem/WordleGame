@@ -17,8 +17,10 @@ public class PlayingPanel {
     private JTextField getEnter = new JTextField();
     private String typedWord = "", targetWord;
     private int counter = 0;
-    private JPanel playingPanel = new JPanel();
+    private final JPanel playingPanel = new JPanel();
     private JFrame gameField;
+    public static Database2 DB;
+    public static String playerName;
 
     public PlayingPanel(JFrame gameField, int x, int y) {
         this.gameField = gameField;
@@ -28,16 +30,30 @@ public class PlayingPanel {
 
     public class LSThread extends Thread {
 
+        @Override
         public void run() {
+            updateScore();
             Lose ls = new Lose(gameField);
         }
     }
 
     public class WNThread extends Thread {
 
+        @Override
         public void run() {
+            updateScore();
             Win wn = new Win(gameField);
         }
+    }
+
+    public void updateScore() {
+        int score;
+        String s1 = DB.getScore(playerName);
+
+        score = Integer.parseInt(s1);
+        score += ((5 - counter) * 20);
+        DB.UpdateUser(playerName, Integer.toString(score));
+
     }
 
     private void configureTextFields() {
@@ -91,7 +107,7 @@ public class PlayingPanel {
         File file = new File("WordList.txt");
         Scanner sc = new Scanner(file);
         while (sc.hasNextLine()) {
-            if (typedWord.equals(sc.nextLine())) {
+            if (typedWord.toLowerCase().equals(sc.nextLine())) {
                 return true;
             }
         }
@@ -102,7 +118,7 @@ public class PlayingPanel {
         if (counter == 5) {
             return false;
         }
-        if (typedWord.equals(targetWord)) {
+        if (typedWord.toLowerCase().equals(targetWord)) {
             for (int i = 0; i < 5; i++) {
                 chances[counter][i].setBackground(new java.awt.Color(31, 31, 31));
                 chances[counter][i].setForeground(new java.awt.Color(196, 207, 161));
@@ -187,7 +203,7 @@ public class PlayingPanel {
         }
     }
 
-    private KeyListener textField0_3 = new KeyAdapter() {
+    private final KeyListener textField0_3 = new KeyAdapter() {
         @Override
         public void keyTyped(KeyEvent e) {
             JTextField textField = (JTextField) e.getSource();
@@ -200,7 +216,7 @@ public class PlayingPanel {
         }
     };
 
-    private KeyListener textField4 = new KeyAdapter() {
+    private final KeyListener textField4 = new KeyAdapter() {
         @Override
         public void keyTyped(KeyEvent e) {
             JTextField textField = (JTextField) e.getSource();
@@ -242,7 +258,7 @@ public class PlayingPanel {
         }
     };
 
-    private KeyListener specialKeys = new KeyAdapter() {
+    private final KeyListener specialKeys = new KeyAdapter() {
         @Override
         public void keyPressed(KeyEvent e) {
             switch (e.getExtendedKeyCode()) {
@@ -251,11 +267,11 @@ public class PlayingPanel {
                     Main_page mp = new Main_page();
                     mp.setVisible(true);
                     break;
-               
+
                 case KeyEvent.VK_ENTER:
                     pressEnter.keyPressed(e);
                     break;
-                
+
                 default:
             }
         }

@@ -23,6 +23,7 @@ public class UserPanel extends javax.swing.JFrame {
      */
     public UserPanel(JFrame source) {
         this.source = source;
+        PlayingPanel.DB = database ;
         initComponents();
         Point pt = source.getLocation() ;
         setLocation(pt.x+5, pt.y + source.getHeight()/3);
@@ -116,19 +117,34 @@ public class UserPanel extends javax.swing.JFrame {
 
     private void UserNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UserNameKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if("".equals(UserName.getText()))
+                evt.consume();
+        else{
             try {
                source.dispose();
                 this.dispose();
                 GameField GF = new GameField();
                 GF.show();
+                name = UserName.getText();
+                PlayingPanel.playerName = name ;
+                if ( database.SearchName(name) == false) {
+                    database.INSERTNEWUSER(name, "0");
+                    System.out.println("Enter New user ");
+
+                }
+                database.ResetRank();
+                database.ResetId();
+                
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(UserPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
         }
         else 
             if (evt.getExtendedKeyCode() == KeyEvent.VK_ESCAPE) {
             this.dispose();
         }
+    
     }//GEN-LAST:event_UserNameKeyPressed
 
     private void UserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserNameActionPerformed
@@ -173,4 +189,6 @@ public class UserPanel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
     private static JFrame source ;
+    private String name;
+    private Database2 database = new Database2();
 }

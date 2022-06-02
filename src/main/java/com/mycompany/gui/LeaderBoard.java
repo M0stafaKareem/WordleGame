@@ -17,6 +17,8 @@ import java.util.logging.Logger;
  */
 public class LeaderBoard extends javax.swing.JFrame {
 
+    
+
     /**
      * Creates new form LeaderBoard
      */
@@ -25,6 +27,8 @@ public class LeaderBoard extends javax.swing.JFrame {
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
+        SetPLayerNames();
+        
     }
 
     /**
@@ -39,10 +43,19 @@ public class LeaderBoard extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         DashBoard = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
+        PlayerName1 = new javax.swing.JLabel();
+        PlayerName2 = new javax.swing.JLabel();
+        PlayerName3 = new javax.swing.JLabel();
+        PlayerName4 = new javax.swing.JLabel();
+        PlayerName5 = new javax.swing.JLabel();
+        PlayerName6 = new javax.swing.JLabel();
+        PlayerName7 = new javax.swing.JLabel();
+        PlayerName8 = new javax.swing.JLabel();
+        PlayerName9 = new javax.swing.JLabel();
+        PlayerName10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        PlayerName = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         PlaceBackground = new javax.swing.JLabel();
         ThirdPlaceBackground = new javax.swing.JLabel();
@@ -55,7 +68,7 @@ public class LeaderBoard extends javax.swing.JFrame {
         BackButtonL = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(360, 800));
+        setUndecorated(true);
         setResizable(false);
         setSize(new java.awt.Dimension(360, 800));
         setType(java.awt.Window.Type.POPUP);
@@ -71,18 +84,73 @@ public class LeaderBoard extends javax.swing.JFrame {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        PlayerName1.setFont(new java.awt.Font("Silkscreen", 0, 25)); // NOI18N
+        PlayerName1.setForeground(new java.awt.Color(255, 255, 255));
+        PlayerName1.setText("2. Player 2");
+        PlayerName1.setToolTipText("Player 2");
+        jPanel3.add(PlayerName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 290, 30));
+
+        PlayerName2.setFont(new java.awt.Font("Silkscreen", 0, 25)); // NOI18N
+        PlayerName2.setForeground(new java.awt.Color(255, 255, 255));
+        PlayerName2.setText("3. Player 3");
+        PlayerName2.setToolTipText("Player 3");
+        jPanel3.add(PlayerName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 290, 30));
+
+        PlayerName3.setFont(new java.awt.Font("Silkscreen", 0, 25)); // NOI18N
+        PlayerName3.setForeground(new java.awt.Color(255, 255, 255));
+        PlayerName3.setText("4. Player 4");
+        PlayerName3.setToolTipText("Player 4");
+        jPanel3.add(PlayerName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 290, 30));
+
+        PlayerName4.setFont(new java.awt.Font("Silkscreen", 0, 25)); // NOI18N
+        PlayerName4.setForeground(new java.awt.Color(255, 255, 255));
+        PlayerName4.setText("1. Player 1");
+        jPanel3.add(PlayerName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 290, 30));
+
+        PlayerName5.setFont(new java.awt.Font("Silkscreen", 0, 25)); // NOI18N
+        PlayerName5.setForeground(new java.awt.Color(255, 255, 255));
+        PlayerName5.setText("5. Player 5");
+        PlayerName5.setToolTipText("Player 5");
+        jPanel3.add(PlayerName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 290, 30));
+
+        PlayerName6.setFont(new java.awt.Font("Silkscreen", 0, 25)); // NOI18N
+        PlayerName6.setForeground(new java.awt.Color(255, 255, 255));
+        PlayerName6.setText("6. Player 6");
+        PlayerName6.setToolTipText("Player 5");
+        jPanel3.add(PlayerName6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 220, 40));
+
+        PlayerName7.setFont(new java.awt.Font("Silkscreen", 0, 25)); // NOI18N
+        PlayerName7.setForeground(new java.awt.Color(255, 255, 255));
+        PlayerName7.setText("7. Player 7");
+        PlayerName7.setToolTipText("Player 5");
+        jPanel3.add(PlayerName7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 290, 30));
+
+        PlayerName8.setFont(new java.awt.Font("Silkscreen", 0, 25)); // NOI18N
+        PlayerName8.setForeground(new java.awt.Color(255, 255, 255));
+        PlayerName8.setText("2. Player 2");
+        PlayerName8.setToolTipText("Player 2");
+        jPanel3.add(PlayerName8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 290, 30));
+
+        PlayerName9.setFont(new java.awt.Font("Silkscreen", 0, 25)); // NOI18N
+        PlayerName9.setForeground(new java.awt.Color(255, 255, 255));
+        PlayerName9.setText("2. Player 2");
+        PlayerName9.setToolTipText("Player 2");
+        jPanel3.add(PlayerName9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 290, 30));
+
+        PlayerName10.setFont(new java.awt.Font("Silkscreen", 0, 25)); // NOI18N
+        PlayerName10.setForeground(new java.awt.Color(255, 255, 255));
+        PlayerName10.setText("10. Player 10");
+        PlayerName10.setToolTipText("Player 5");
+        jPanel3.add(PlayerName10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 290, 30));
+
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Elements/PP_backgorund.png"))); // NOI18N
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, -1, -1));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Elements/PP_backgorund.png"))); // NOI18N
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, -1, -1));
-
-        PlayerName.setFont(new java.awt.Font("Silkscreen", 0, 25)); // NOI18N
-        PlayerName.setText("1. Player 1");
-        jPanel3.add(PlayerName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 170, 30));
-
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Elements/PP_backgorund.png"))); // NOI18N
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, -1, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Elements/PP_backgorund.png"))); // NOI18N
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, -1, -1));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Elements/PP_backgorund.png"))); // NOI18N
         jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, -1, -1));
@@ -107,7 +175,7 @@ public class LeaderBoard extends javax.swing.JFrame {
 
         DashBoard.setViewportView(jPanel3);
 
-        jPanel1.add(DashBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 320, 310));
+        jPanel1.add(DashBoard, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 290, 370));
         DashBoard.getVerticalScrollBar().setPreferredSize(new Dimension(0,0));
 
         LeaderBoard_Title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Elements/LeaderBoard.png"))); // NOI18N
@@ -151,25 +219,28 @@ public class LeaderBoard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 360, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    String query1 = "SELECT DISTINCT Id,Name,Score FROM leaderboard where Id=1";
+    String query2 = "SELECT DISTINCT Id,Name,Score FROM leaderboard where Id=2";
+    String query3 = "SELECT DISTINCT Id,Name,Score FROM leaderboard where Id=3";
+    String query4 = "SELECT DISTINCT Id,Name,Score FROM leaderboard where Id=4";
+    String query5 = "SELECT DISTINCT Id,Name,Score FROM leaderboard where Id=5";
+    String query6 = "SELECT DISTINCT Id,Name,Score FROM leaderboard where Id=6";
+    String query7 = "SELECT DISTINCT Id,Name,Score FROM leaderboard where Id=7";
+    String query8 = "SELECT DISTINCT Id,Name,Score FROM leaderboard where Id=8";
+    String query9 = "SELECT DISTINCT Id,Name,Score FROM leaderboard where Id=9";
+    String query10 = "SELECT DISTINCT Id,Name,Score FROM leaderboard where Id=10";
 
     private void BackButtonLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonLActionPerformed
         try {
@@ -184,7 +255,6 @@ public class LeaderBoard extends javax.swing.JFrame {
 
     private void BackButtonLKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BackButtonLKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ESCAPE) {
-
             try {
                 GameField GF = new GameField();
                 GF.show();
@@ -195,9 +265,28 @@ public class LeaderBoard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BackButtonLKeyPressed
 
-    /**
-     * @param args the command line argument
-     */
+    private void SetPLayerNames() {
+
+        database.RankUsers();
+        database.ResetRank();
+        database.ResetId();
+        //database.Deleteall();
+        
+        
+        PlayerName4.setText(database.PrintUsers(query1));
+        PlayerName1.setText(database.PrintUsers(query2));
+        PlayerName2.setText(database.PrintUsers(query3));
+        PlayerName3.setText(database.PrintUsers(query4));
+        PlayerName5.setText(database.PrintUsers(query5));
+        PlayerName6.setText(database.PrintUsers(query6));
+        PlayerName7.setText(database.PrintUsers(query7));
+        PlayerName8.setText(database.PrintUsers(query8));
+        PlayerName9.setText(database.PrintUsers(query9));
+        PlayerName10.setText(database.PrintUsers(query10));
+
+    }
+
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -230,13 +319,23 @@ public class LeaderBoard extends javax.swing.JFrame {
         });
     }
 
+    private Database2 database = new Database2();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButtonL;
     private javax.swing.JScrollPane DashBoard;
     private javax.swing.JLabel FirstPlaceBackground;
     private javax.swing.JLabel LeaderBoard_Title;
     private javax.swing.JLabel PlaceBackground;
-    private javax.swing.JLabel PlayerName;
+    private javax.swing.JLabel PlayerName1;
+    private javax.swing.JLabel PlayerName10;
+    private javax.swing.JLabel PlayerName2;
+    private javax.swing.JLabel PlayerName3;
+    private javax.swing.JLabel PlayerName4;
+    private javax.swing.JLabel PlayerName5;
+    private javax.swing.JLabel PlayerName6;
+    private javax.swing.JLabel PlayerName7;
+    private javax.swing.JLabel PlayerName8;
+    private javax.swing.JLabel PlayerName9;
     private javax.swing.JLabel SconedPlaceBackground;
     private javax.swing.JLabel ThirdPlaceBackground;
     private javax.swing.JLabel jLabel10;
